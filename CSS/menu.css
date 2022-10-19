@@ -108,3 +108,12 @@ a:hover div{
   opacity:1;
   transform:translatez(0px);
 }
+
+/* PARA LA CONFIGURACION DEL TITULO DE ALTOS DE BUCARAMANGA */
+
+h1{
+font-family: 'Franklin Gothic Demi';
+font-size: 45px;
+text-align: center;
+
+}
