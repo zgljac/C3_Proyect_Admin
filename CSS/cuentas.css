@@ -67,9 +67,10 @@ button{
   border-color: #ab4493; 
   border-style: solid; 
   border-radius: 10px;  
-  width: 420px;   
+  width: 100px;   
   cursor: pointer;
 }
+
 
 
 button p{
@@ -104,7 +105,7 @@ h3{
 
 
 p{
-  font-size: 14px; 
+  font-size: 11px; 
   color: #0e0e0e; 
 }
 
@@ -130,3 +131,19 @@ p{
   border: 1px solid #97d848;
 }
 
+a{
+   height: 45px; 
+  padding-left: 5px;
+  padding-right: 5px;   
+  margin-bottom: 20px; 
+  margin-top: 10px;   
+  text-transform: uppercase;
+  background-color: #ab4493; 
+  border-color: #ab4493; 
+  border-style: solid; 
+  border-radius: 10px;  
+  width: 80px;   
+  cursor: pointer;
+
+
+}

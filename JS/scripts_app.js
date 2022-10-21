@@ -7,6 +7,8 @@ function ingresar ()
     }
     console.log(datos);
 
+
+
     $.ajax({
         type: "POST",
         url: "http://localhost",
@@ -17,5 +19,10 @@ function ingresar ()
 
 
     })
+
+
+function iratras(){
+    location.href ="../VISTAS/menu.html";
+
 
 }

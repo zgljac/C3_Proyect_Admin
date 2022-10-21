@@ -3,6 +3,7 @@
   <meta charset="UTF-8">
 
 <link rel="stylesheet" type="text/css" href="../CSS/inmuebles.css">
+<script type="text/javascript" src="../JS/scripts_app.js" ></script>
 
   <title>Formulario de contacto</title>
 
@@ -24,22 +25,21 @@
        
 
 
-          <form action="submeter-formulario.php" method="post">       
+          <!-- este form estaba primero pero lo he cambiado para mas abajo pues el que me redirecciona a la pagina principal <form action="submeter-formulario.php" method="post">     -->        
 
             
                 <p>
                   <label for="nombre" class="colocar_nombre">ID Inmueble
-                    <span class="obligatorio">*</span>
+                  
                   </label>
-                    <input type="text" name="introducir_nombre" id="nombre" required="obligatorio" placeholder="Escribe el Id Inmueble">
+                    <input type="text" name="introducir_nombre" id="nombre"x| placeholder="Escribe el Id Inmueble">
                 </p>
               
-                <p>
-                  <label for="email" class="colocar_email">Dirección
-          
+                 <p>
+                  <label for="telefone" class="colocar_telefono">Dirección
                   </label>
-                    <input type="text" name="introducir_email" id="email" required="obligatorio" placeholder="Escribe tu Dirección">
-                </p>
+                    <input type="text" name="introducir_telefono" id="telefono" placeholder="Escribe la Dirección">
+                </p>    
             
                 <p>
                   <label for="telefone" class="colocar_telefono">ID Tarifa
@@ -55,7 +55,12 @@
               
                 
               
-                <button type="submit" name="enviar_formulario" id="enviar"><p>Enviar</p></button>
+                <button type="submit" name="enviar_formulario" id="enviar"><p>Eliminar</p></button>
+                <button type="submit" name="enviar_formulario" id="enviar"><p>Guardar</p></button>
+                <button type="submit" name="enviar_formulario" id="enviar"><p>Actualizar</p></button>
+                <button type="submit" name="enviar_formulario" id="enviar"><p>Mostrar</p></button>
+                <!-- con este código me permite clickear en el botón e ir al menú --> <form action="menu.html" method="post">   
+                <button type="submit" name="enviar_formulario" id="enviar" onclick="iratras()"><p>Atrás</p></button>
 
                 <p class="aviso">
                   <span class="obligatorio"> * </span>los campos son obligatorios.

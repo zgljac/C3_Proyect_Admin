@@ -67,13 +67,14 @@ button{
   border-color: #ab4493; 
   border-style: solid; 
   border-radius: 10px;  
-  width: 420px;   
+  width: 80px;   
   cursor: pointer;
 }
 
 
 button p{
   color: #fff; 
+
 }
 
 
@@ -104,7 +105,7 @@ h3{
 
 
 p{
-  font-size: 14px; 
+  font-size: 11px; 
   color: #0e0e0e; 
 }
 
