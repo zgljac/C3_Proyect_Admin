@@ -4,6 +4,9 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="./CSS/index.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="/JS/scripts_app.js"></script>
+
 	<title></title>
 </head>
 <body><br>
@@ -14,13 +17,13 @@
     <div class="login-form">
       <div class="sign-in-htm">
         <div class="group">
-          <label for="user" class="label">Usuario</label>
-          <input id="user" type="text" class="input">
+          <label for="usuario" class="label">Usuario</label>
+          <input id="usuario" type="text" class="input">
         </div>
         <div class="group">
-          <label for="pass" class="label">Contraseña</label>
-          <input id="pass" type="password" class="input" data-type="password">
+          <label for="contrasena" class="label">Contraseña</label>
+          <input id="contrasena" type="password" class="input" data-type="contrasena">
       <br><br>
         <div class="group">
-          <input type="submit" class="button" value="Ingresar">
+        <input type="button" name="login" id="login" value="INGRESAR" class="button" onclick="Ingresar()">
         </div>

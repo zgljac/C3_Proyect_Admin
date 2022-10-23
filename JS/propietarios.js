@@ -1,9 +1,7 @@
-// FUNCION LOGIN
-function Ingresar ()
+// FUNCION PARA CONSULTAR UN PROPIETARIO
+function ConsultaPropietario ()
 {
-// alert("Hola esta funcionando")
-var datos = {"usuario" : document.getElementById("usuario").value,
-                    "contrasena" : $("#contrasena").val()
+var datos = {"Numero_Identificacion" : document.getElementById("Numero_Identificacion").value,
 }
 $.ajax({
         type: "post",
@@ -13,12 +11,12 @@ $.ajax({
         success: function (data) {
             if (data.existe == 1)
             {
-                location.href = 'VISTAS/menu.html'
+                location.href = '../VISTAS/propietarios.html'
             }
             else
             {
                 console.log("No existe en DB")
-                alert ('Usuario o contrasena incorrectas');
+                alert ('El propietario no existe');
             }
         }
 });
