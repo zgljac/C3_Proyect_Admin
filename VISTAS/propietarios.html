@@ -3,91 +3,71 @@
   <meta charset="UTF-8">
 
 <link rel="stylesheet" type="text/css" href="../CSS/propietarios.css">
-<script type="text/javascript" src="../JS/scripts_app.js" ></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript" src="../JS/propietarios.js" ></script>
 
-  <title>Formulario de contacto</title>
+<title>Formulario de Propietarios</title>
 
-  <!-- Enlace al documento css. no aplicable en codepen.
-  <link rel="stylesheet" type="text/css" href="contact-form.css">
--->
-  
-  </head>
-
-
+</head>
 <body>  
-  
-  <!-- formulario de contacto en html y css -->  
-
   <div class="contact_form">
 
     <div class="formulario">      
       <h1>PROPIETARIOS</h1>
-       
-
-
-          <!-- este form estaba primero pero lo he cambiado para mas abajo pues el que me redirecciona a la pagina principal <form action="submeter-formulario.php" method="post">     -->          
-
-            
                 <p>
                   <label for="nombre" class="colocar_nombre">Número de identificación
                     <span class="obligatorio">*</span>
                   </label>
-                    <input type="text" name="Numero_Identificacion" id="Numero_Identificacion" required="obligatorio" placeholder="Escribe tu identificación">
+                    <input type="number" name="Numero_Identificacion" id="Numero_Identificacion" required="obligatorio" placeholder="Escribe tu identificación">
                 </p>
               
                 <p>
-                  <label for="email" class="colocar_email">Primer Nombre
+                  <label for="Primer_Nombre" class="colocar_Primer_Nombre">Primer Nombre
           
                   </label>
-                    <input type="text" name="introducir_email" id="email" required="obligatorio" placeholder="Escribe tu Primer Nombre">
+                    <input type="text" name="Primer_Nombre" id="Primer_Nombre" required="obligatorio" placeholder="Escribe tu Primer Nombre">
                 </p>
             
                 <p>
-                  <label for="telefone" class="colocar_telefono">Segundo Nombre
+                  <label for="Segundo_Nombre" class="colocar_Segundo_Nombre">Segundo Nombre
                   </label>
-                    <input type="text" name="introducir_telefono" id="telefono" placeholder="Escribe tu Primer Nombre">
+                    <input type="text" name="Segundo_Nombre" id="Segundo_Nombre" placeholder="Escribe tu Segundo Nombre">
                 </p>    
               
                 <p>
-                  <label for="website" class="colocar_website">Primer Apellido
+                  <label for="Primer_Apellido" class="colocar_Primer_Apellido">Primer Apellido
                   </label>
-                    <input type="text" name="introducir_website" id="website" placeholder="Escribe tu Primer Apellido">
+                    <input type="text" name="colocar_Primer_Apellido" id="Primer_Apellido" placeholder="Escribe tu Primer Apellido">
                 </p>    
               
                 <p>
-                  <label for="asunto" class="colocar_asunto">Segundo Apellido
+                  <label for="Segundo_Apellido" class="colocar_Segundo_Apellido">Segundo Apellido
+                  </label>
+                    <input type="text" name="Segundo_Apellido" id="Segundo_Apellido" required="obligatorio" placeholder="Escribe tu Segundo Apellido">
+                </p>    
+              
+                <p>
+                  <label for="correo" class="colocar_correo">Correo
+                  </label>
+                    <input type="email" name="introducir_correo" id="correo" required="obligatorio" placeholder="Escribe Tu Correo">
+                </p>                    
                 
-                  </label>
-                    <input type="text" name="introducir_asunto" id="assunto" required="obligatorio" placeholder="Escribe tu Segundo Apellido">
-                </p>    
-              
                 <p>
-                  <label for="asunto" class="colocar_asunto">Teléfono
-                
+                   <label for="Telefono" class="colocar_Telefono">Teléfono             
                   </label>
-                    <input type="text" name="introducir_asunto" id="assunto" required="obligatorio" placeholder="Escribe Número de Teléfono">
-                                </p>     
+                    <input type="tel" name="introducir_Telefono" id="Telefono" required="obligatorio" placeholder="Escribe Número de Teléfono">
+                </p>     
 
-                                 <p>
-                  <label for="asunto" class="colocar_asunto">Correo
-                
+                <p>
+                  <label for="Direccion_Contacto" class="colocar_Direccion_Contacto">Dirección de contacto
                   </label>
-                    <input type="text" name="introducir_asunto" id="assunto" required="obligatorio" placeholder="Escribe Tu Correo">
-                                </p>                    
-              
-
-                         <p>
-                  <label for="asunto" class="colocar_asunto">Dirección
-                
-                  </label>
-                    <input type="text" name="introducir_asunto" id="assunto" required="obligatorio" placeholder="Escribe Tu Dirección">
-                                </p>                
+                    <input type="text" name="Direccion_Contacto" id="Direccion_Contacto" required="obligatorio" placeholder="Escribe Tu Dirección de contacto">
+                </p>                
               
                 <button type="submit" name="enviar_formulario" id="enviar"><p>Eliminar</p></button>
-                <button type="submit" name="enviar_formulario" id="enviar"><p>Guardar</p></button>
-                <button type="submit" name="enviar_formulario" id="enviar"><p>Actualizar</p></button>
-                <button type="submit" name="enviar_formulario" id="enviar" onclick="ConsultaPropietario()"><p>Mostrar</p></button>
+                <button type="submit" name="enviar_formulario" id="enviar" onclick="Agregar_Propietario()"><p>Guardar</p></button>
+                <button type="submit" name="enviar_formulario" id="enviar" onclick="Actualizar()"><p>Actualizar</p></button>
+                <button type="submit" name="enviar_formulario" id="mostrar" onclick="ConsultaPropietario()"><p>MOSTRAR</p></button>
                  <!-- con este código me permite clickear en el botón e ir al menú --> <form action="menu.html" method="post">   
                 <button type="submit" name="enviar_formulario" id="enviar" onclick="iratras()"><p>Atrás</p></button>
 
@@ -101,13 +81,3 @@
 
 </body>
 </html>
-
-
-<!-- Created by Grupo 2 Unab Mintic 2022 -->
-
-
-
-Resources
-
-
-Resources

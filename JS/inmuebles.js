@@ -1,4 +1,4 @@
-// FUNCION PARA CONSULTAR UN PROPIETARIO
+// FUNCION PARA CONSULTAR UN INMUEBLE
 function ConsultaPropietario ()
 {
 var datos = {"Numero_Identificacion" : document.getElementById("Numero_Identificacion").value,
@@ -36,7 +36,7 @@ $.ajax({
 });
 }
 
-// FUNCION PARA CONSULTAR UN PROPIETARIO
+// FUNCION PARA LISTAR TODOS LOS PROPIETARIOS
 function ListarUsers(){
 
 	var datos={}	

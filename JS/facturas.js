@@ -1,4 +1,4 @@
-// FUNCION PARA CONSULTAR UN PROPIETARIO
+// FUNCION PARA CONSULTAR UNA FACTURA
 function ConsultaPropietario ()
 {
 var datos = {"Numero_Identificacion" : document.getElementById("Numero_Identificacion").value,
@@ -36,7 +36,7 @@ $.ajax({
 });
 }
 
-// FUNCION PARA CONSULTAR UN PROPIETARIO
+// FUNCION PARA LISTAR TODOS LOS PROPIETARIOS
 function ListarUsers(){
 
 	var datos={}	
@@ -134,33 +134,6 @@ $.ajax({
 		{
 			console.log('Error - Propietario NO Actualizado')
 			alert('Error - Propietario NO Actualizado')
-		}
-	}
-})
-}
-
-// FUNCION PARA ELIMINAR UN PROPIETARIO
-function Eliminar(){
-
-	var datos={
-		"Id":document.getElementById("Id").value,		
-	}
-$.ajax({
-	type:"post",
-	url:"http://localhost:3003/delete",
-	data:datos,
-	dataType:"json",
-	success:function(data){
-		if(data.eliminado==1)
-		{
-			console.log('Usuario Eliminado Satisfactoriamente')
-			alert('Usuario Eliminado Satisfactoriamente')
-			location.href='../index.html'
-		}
-		else
-		{
-			console.log('Error')
-			alert('Error - Usuario No Eliminado')
 		}
 	}
 })
