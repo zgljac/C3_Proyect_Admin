@@ -96,7 +96,7 @@ $.ajax({
 		{
 			console.log('Propietario Almacenado - OK')
 			alert('El Propietario fue almacenado Satisfactoriamente')
-			location.href='../VISTAS/menu.html'
+			location.href='../VISTAS/inmuebles.html'
 		}
 		else
 		{
