@@ -72,8 +72,43 @@ $.ajax({
 })
 }
 
+// FUNCION PARA REGISTRAR UN PROPIETARIO  --> funciona ok
+function insertar()
+{
+    var datos={
+        "Numero_Identificacion":document.getElementById("Numero_Identificacion").value,
+        "Primer_Nombre":document.getElementById("Primer_Nombre").value,
+        "Segundo_Nombre":document.getElementById("Segundo_Nombre").value,
+        "Primer_Apellido":document.getElementById("Primer_Apellido").value,
+        "Segundo_Apellido":document.getElementById("Segundo_Apellido").value,
+        "correo":document.getElementById("correo").value,
+        "Telefono":document.getElementById("Telefono").value,
+        "Direccion_Contacto":document.getElementById("Direccion_Contacto").value
+    }
+console.log(datos)
+$.ajax({
+    type:"post",
+    url:"http://localhost:3000/insertar_User",
+    data:datos,
+    dataType:"json",
+    success:function(data){
+        if (data.save == 1)
+        {
+            console.log('Propietario Almacenado - OK')
+            alert('El Propietario fue almacenado Satisfactoriamente')
+            location.href='../VISTAS/inmuebles.html'
+        }
+        else
+        {
+            console.log('Fatal Error - Propietario NO almacenado')
+            alert('Fatal Error - Propietario NO Almacenado')
+        }
+    }
+})
+}
+
 // FUNCION PARA REGISTRAR UN PROPIETARIO
-function Agregar_Propietario()
+/* function Agregar_Propietario()
 {
 	var datos={
         "Direccion_Contacto":document.getElementById("Direccion_Contacto").value,
@@ -105,7 +140,7 @@ $.ajax({
 		}
 	}
 })
-}
+} */
 
 // FUNCION PARA ACTUALIZAR UN PROPIETARIO
 function Actualizar(){
@@ -139,7 +174,33 @@ $.ajax({
 })
 }
 
-// FUNCION PARA ELIMINAR UN PROPIETARIO
+// FUNCION PARA ELIMINAR UN PROPIETARIO  ---> funciona ok
+function Eliminar(){
+    var datos={
+        "Numero_Identificacion":document.getElementById("Numero_Identificacion").value,        
+    }
+$.ajax({
+    type:"post",
+    url:"http://localhost:3000/delete_propietarios",
+    data:datos,
+    dataType:"json",
+    success:function(data){
+        if(data.eliminado==1)
+        {
+            console.log('Usuario Eliminado Satisfactoriamente')
+            alert('Usuario Eliminado Satisfactoriamente')
+            location.href='../VISTAS/propietarios.html'
+        }
+        else
+        {
+            console.log('Error')
+            alert('Error - Usuario No Eliminado')
+        }
+    }
+})
+}
+
+/* FUNCION PARA ELIMINAR UN PROPIETARIO
 function Eliminar(){
 
 	var datos={
@@ -164,4 +225,4 @@ $.ajax({
 		}
 	}
 })
-}
+}*/
