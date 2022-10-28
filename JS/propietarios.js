@@ -111,7 +111,7 @@ $.ajax({
 function Actualizar(){
 
     var datos={
-          "Numero_Identificacion":document.getElementById("Numero_Identificacion").value,
+        "Numero_Identificacion":document.getElementById("Numero_Identificacion").value,
         "Primer_Nombre":document.getElementById("Primer_Nombre").value,
         "Segundo_Nombre":document.getElementById("Segundo_Nombre").value,
         "Primer_Apellido":document.getElementById("Primer_Apellido").value,
@@ -134,7 +134,7 @@ function Actualizar(){
             {
                 console.log('Usuario Actualizado Satisfactoriamente')
                 alert('Usuario Actualizado Satisfactoriamente')
-                location.href='./VISTAS/propietarios.html' //pagina donde será redireccionado tras actualizar o la función que tenga programado
+                location.href='./VISTAS/menu.html' //pagina donde será redireccionado tras actualizar o la función que tenga programado
 
             }
             else
