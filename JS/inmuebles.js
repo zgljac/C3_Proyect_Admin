@@ -1,42 +1,43 @@
 // FUNCION PARA CONSULTAR UN INMUEBLE
-function ConsultaPropietario ()
+function Consultainmueble ()
 {
-var datos = {"Numero_Identificacion" : document.getElementById("Numero_Identificacion").value,
+var datos = {"id_inmueble" : document.getElementById("id_inmueble").value,
 }
 console.log(datos)
 
 $.ajax({
         type: "post",
-        url: "http://localhost:3000/Consultar_Propietario",
+        url: "http://localhost:3000/Consultar_inmuebles",
         data : datos,
         dataType: "json",
         success: function (data) {
             if (data.result.length > 0)
             {
-                let propietario = ""
+                let inmuebles = ""
                 let cant = 0
 
                 for (i = 0; i < data.result.length; i++)
                 {
+
                     $('#gm').remove();
                 }
                 for (i = 0; i < data.result.length; i++)
                 {
                     cant = cant + 1
-                    propietario = cant +' '+'Primer_Nombre:'+' '+data.result[i].Primer_Nombre+' '+data.result[i].Segundo_Nombre+' '+data.result[i].Primer_Apellido+' '+data.result[i].Segundo_Apellido+' '+data.result[i].correo+' '+data.result[i].Telefono+' '+data.result[i].Direccion_Contacto+'\n'
-                    $('#propietario').append('<p id="gm">'+propietario+'</p>')
+                    inmuebles = cant +' '+'direccion:'+' '+data.result[i].direccion+' '+data.result[i].numero_identificacion+' '+data.result[i].numero_identificacion+' '+data.result[i].id_tarifa+' '+data.result[i].id_tarifa+'\n'
+                    $('#inmuebles').append('<p id="gm">'+inmuebles+'</p>')
                 }
             }
             else
             {
                 console.log("No existe en DB")
-                alert ('El propietario no existe');
+                alert ('El inmueble no existe');
             }
         }
 });
 }
 
-// FUNCION PARA LISTAR TODOS LOS PROPIETARIOS
+// FUNCION PARA CONSULTAR UN INMUEBLE -->no funciona
 function ListarUsers(){
 
 	var datos={}	
@@ -72,95 +73,89 @@ $.ajax({
 })
 }
 
-// FUNCION PARA REGISTRAR UN PROPIETARIO
-function Agregar_Propietario()
+// FUNCION PARA REGISTRAR UN INMUEBLE
+function insertar()
 {
 	var datos={
-        "Direccion_Contacto":document.getElementById("Direccion_Contacto").value,
-        "Numero_Identificacion":document.getElementById("Numero_Identificacion").value,
-        "Primer_Apellido":document.getElementById("Primer_Apellido").value,
-		"Primer_Nombre":document.getElementById("Primer_Nombre").value,
-        "Segundo_Apellido":document.getElementById("Segundo_Apellido").value,
-		"Segundo_Nombre":document.getElementById("Segundo_Nombre").value,
-		"Telefono":document.getElementById("Telefono").value,
-        "correo":document.getElementById("correo").value
+        "id_inmueble":document.getElementById("id_inmueble").value,
+        "direccion":document.getElementById("direccion").value,
+		"numero_identificacion":document.getElementById("numero_identificacion").value,
+        "id_tarifa":document.getElementById("id_tarifa").value
 	}
 console.log(datos)
 $.ajax({
 	type:"post",
-	url:"http://localhost:3000/Agregar_Propietarios",
+	url:"http://localhost:3000/insertar_User",
 	data:datos,
 	dataType:"json",
 	success:function(data){
 		if (data.save == 1)
 		{
-			console.log('Propietario Almacenado - OK')
-			alert('El Propietario fue almacenado Satisfactoriamente')
-			location.href='../VISTAS/menu.html'
+			console.log('Inmueble agregado - OK')
+			alert('El Inmueble fue agregado Satisfactoriamente')
+			location.href='../VISTAS/propietarios.html'
 		}
 		else
 		{
-			console.log('Fatal Error - Propietario NO almacenado')
-			alert('Fatal Error - Propietario NO Almacenado')
+			console.log('Fatal Error - Inmueble NO almacenado')
+			alert('Fatal Error - Inmueble NO Almacenado')
 		}
 	}
 })
 }
 
-// FUNCION PARA ACTUALIZAR UN PROPIETARIO
+// FUNCION PARA ACTUALIZAR UN INMUEBLE -->validar si funciona
 function Actualizar(){
 	var datos={
-        "Direccion_Contacto":document.getElementById("Direccion_Contacto").value,
-        "Primer_Apellido":document.getElementById("Primer_Apellido").value,
-		"Primer_Nombre":document.getElementById("Primer_Nombre").value,
-        "Segundo_Apellido":document.getElementById("Segundo_Apellido").value,
-		"Segundo_Nombre":document.getElementById("Segundo_Nombre").value,
-		"Telefono":document.getElementById("Telefono").value,
-        "correo":document.getElementById("correo").value
+        "id_inmueble":document.getElementById("id_inmueble").value,
+        "direccion":document.getElementById("direccion").value,
+		"numero_identificacion":document.getElementById("numero_identificacion").value,
+        "id_tarifa":document.getElementById("id_tarifa").value
 	}
 $.ajax({
 	type:"post",
-	url:"http://localhost:3000/Actualizar_Propietario",
+	url:"http://localhost:3000/update",
 	data:datos,
 	dataType:"json",
 	success:function(data){
 		if(data.save == 1)
 		{
-			console.log('Propietario Actualizado Satisfactoriamente')
-			alert('Propietario Actualizado Satisfactoriamente')
-			location.href='../VISTAS/menu.html'
+			console.log('Inmueble Actualizado Satisfactoriamente')
+			alert('Inmueble Actualizado Satisfactoriamente')
+			location.href='../VISTAS/menu.html'//pagina donde será redireccionado tras actualizar o la función que tenga programado
 		}
 		else
 		{
-			console.log('Error - Propietario NO Actualizado')
-			alert('Error - Propietario NO Actualizado')
+			console.log('Error - Inmueble NO Actualizado')
+			alert('Error - Inmueble NO Actualizado')
 		}
 	}
 })
 }
 
-// FUNCION PARA ELIMINAR UN PROPIETARIO
+// FUNCION PARA ELIMINAR UN INMUEBLE -->funciona
+
 function Eliminar(){
 
 	var datos={
-		"Id":document.getElementById("Id").value,		
+		"id_inmueble":document.getElementById("id_inmueble").value,		
 	}
 $.ajax({
 	type:"post",
-	url:"http://localhost:3003/delete",
+	url:"http://localhost:3003/delete_inmuebles",
 	data:datos,
 	dataType:"json",
 	success:function(data){
 		if(data.eliminado==1)
 		{
-			console.log('Usuario Eliminado Satisfactoriamente')
-			alert('Usuario Eliminado Satisfactoriamente')
-			location.href='../index.html'
+			console.log('Inmueble Eliminado Satisfactoriamente')
+			alert('Inmueble Eliminado Satisfactoriamente')
+			location.href='../VISTAS/inmuebles.html'
 		}
 		else
 		{
 			console.log('Error')
-			alert('Error - Usuario No Eliminado')
+			alert('Error - Inmueble No Eliminado')
 		}
 	}
 })
