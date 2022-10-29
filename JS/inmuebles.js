@@ -37,7 +37,7 @@ $.ajax({
 });
 }
 
-// FUNCION PARA CONSULTAR UN INMUEBLE -->no funciona
+// FUNCION PARA CONSULTAR UN INMUEBLE -->n
 function ListarUsers(){
 
 	var datos={}	
@@ -104,12 +104,12 @@ $.ajax({
 })
 }
 
-// FUNCION PARA ACTUALIZAR UN INMUEBLE -->validar si funciona
+// FUNCION PARA ACTUALIZAR UN INMUEBLE -->
 function Actualizar(){
 	var datos={
         "id_inmueble":document.getElementById("id_inmueble").value,
         "direccion":document.getElementById("direccion").value,
-		"numero_identificacion":document.getElementById("numero_identificacion").value,
+	"numero_identificacion":document.getElementById("numero_identificacion").value,
         "id_tarifa":document.getElementById("id_tarifa").value
 	}
 $.ajax({
@@ -133,7 +133,7 @@ $.ajax({
 })
 }
 
-// FUNCION PARA ELIMINAR UN INMUEBLE -->funciona
+// FUNCION PARA ELIMINAR UN INMUEBLE -->
 
 function Eliminar(){
 
