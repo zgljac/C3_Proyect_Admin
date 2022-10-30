@@ -1,4 +1,5 @@
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -65,7 +66,12 @@
                 <p>
                   <label for="Direccion_Contacto" class="colocar_Direccion_Contacto">Dirección de contacto
                   </label>
-                    <input type="text" name="Direccion_Contacto" id="Direccion_Contacto" required="obligatorio" placeholder="Escribe Tu Dirección de contacto">
+                <textarea type="text" name="Direccion_Contacto" id="Direccion_Contacto" required="obligatorio" placeholder="Escribe Tu Dirección de contacto"
+
+              >
+                  
+                </textarea>
+
                 </p>                
               
               
@@ -77,26 +83,42 @@
   <div id="user"> <!--  esta es la etiqueta con la información que aparecerá con la consulta de la base de datos buscando por el Numero_Identificacion -->  
     </div>
     </form>
-
- <input type="text" name="Numero_Identificacion" id="Numero_Identificacion" value="" placeholder="DIGITE SU ID PARA REALIZAR BÚSQUEDA"> 
 <P>Documento de Identidad</P>
-<br><br>
-
-          
+ <input type="text" name="Numero_Identificacion" id="Numero_Identificacion" value="" placeholder="DIGITE SU ID PARA REALIZAR BÚSQUEDA"> 
 
 
- <button type="submit" name="enviar_formulario" id="enviar" onclick="Eliminar()"><p>Eliminar propietario</p></button>
 
- <button type="submit" name="enviar_formulario" id="enviar" onclick="insertar()"><p>insertar propietario</p></button>
+ <button type="submit" name="enviar_formulario" id="enviar" onclick="Eliminar()"><p>Eliminar Propietario</p></button>
 
-                <button type="submit" name="enviar_formulario" id="enviar" onclick="Actualizar()"><p>Actualizar</p></button>
+ <button type="submit" name="enviar_formulario" id="enviar" onclick="insertar()"><p>Insertar Propietario</p></button>
+
+                <button type="submit" name="enviar_formulario" id="enviar" onclick="Actualizar()"><p>Actualizar Propietario</p></button>
 
                 
           
             
           
-           <button type="submit" name="enviar_formulario" id="enviar" onclick="UserById()"><p>mostrar propietario</p></button>
-           <input type="button" value="Imprime esta pagina" onclick="window.print()">
+           <button type="submit" name="enviar_formulario" id="enviar" onclick="UserById()"><p>Mostrar Propietario</p></button>
+
+           <button type="submit" name="enviar_formulario" id="enviar" onclick="iratras()"><p>Volver Al Menú</p></button>
+
+           <!-- <input type="button" value="Imprime esta pagina" onclick="window.print()"> -->
+           
+
+           <center>
+
+           <img src="../IMG/impresora.png"  width="50px"
+            height="50px" align-items="center" onclick="window.print()">
+
+           </center> 
+           
+
+
+      
+
+
+
+      
            </div>
     </div>  
   </div>

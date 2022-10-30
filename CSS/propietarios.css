@@ -6,6 +6,7 @@ body{
   height: 100%; 
   font-family: 'Noto Sans', sans-serif;
   background-color: #E3DFD2;
+
 }
 
 
@@ -32,6 +33,8 @@ input{
   margin-top: 10px;  
   padding-left: 10px;
   margin-bottom: 20px; 
+  margin: 0;  /* este código me sirve para reducir el tamaño de los input en el formulario 
+  es útil para hacer IMPRIMIR */
 }
 
 
@@ -52,7 +55,7 @@ textarea{
 
 label{
   display: block; 
-  float: center;  
+  float: center; 
 }
 
 
@@ -67,7 +70,7 @@ button{
   border-color: #ab4493; 
   border-style: solid; 
   border-radius: 10px;  
-  width: 80px;   
+  width: 85px;   
   cursor: pointer;
 }
 
@@ -130,3 +133,16 @@ p{
   border: 1px solid #97d848;
 }
 
+textarea {
+    height: 45px;
+    width: 89%;
+    resize: none;
+
+}
+
+/*   Si lo necesitas, el atributo resize puede obtener otros valores:
+
+both: Se puede redimensionar a los lados y hacia arriba y abajo.
+horizontal: se puede redimensionar en la horizontal
+vertical: solo se redimensiona en la vertical
+none: el ya comentado que evita el resize */

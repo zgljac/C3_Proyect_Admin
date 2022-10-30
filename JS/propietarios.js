@@ -134,7 +134,7 @@ function Actualizar(){
             {
                 console.log('Usuario Actualizado Satisfactoriamente')
                 alert('Usuario Actualizado Satisfactoriamente')
-                location.href='./VISTAS/menu.html' //pagina donde será redireccionado tras actualizar o la función que tenga programado
+                location.href='../VISTAS/propietarios.html' //pagina donde será redireccionado tras actualizar o la función que tenga programado
 
             }
             else
@@ -184,6 +184,15 @@ $.ajax({
 })
 
 }
+
+
+function iratras(){
+
+location.href='../VISTAS/menu.html'
+
+}
+
+
 
 //para buscar por id de propietario ---> funciona hasta el back pero no se muestra en el front
 
