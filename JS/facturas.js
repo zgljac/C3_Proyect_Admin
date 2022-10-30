@@ -1,5 +1,5 @@
 // FUNCION PARA CONSULTAR UNA FACTURA
-function ConsultaPropietario ()
+function Consultar_Factura ()
 {
 var datos = {"Numero_Identificacion" : document.getElementById("Numero_Identificacion").value,
 }
