@@ -105,7 +105,7 @@ $.ajax({
 }
 
 // FUNCION PARA ACTUALIZAR UN INMUEBLE 
-function Actualizar(){
+function Actualizar_Inmueble(){
 	var datos={
         "id_inmueble":document.getElementById("id_inmueble").value,
         "direccion":document.getElementById("direccion").value,
@@ -136,7 +136,7 @@ function Actualizar(){
 
 // FUNCION PARA ELIMINAR UN INMUEBLE 
 
-function Eliminar(){
+function Eliminar_Inmueble(){
 
 	var datos={
 		"id_inmueble":document.getElementById("id_inmueble").value,		
