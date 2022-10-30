@@ -37,7 +37,7 @@ $.ajax({
 });
 }
 
-// FUNCION PARA CONSULTAR UN INMUEBLE -->n
+// FUNCION PARA CONSULTAR UN INMUEBLE 
 function ListarUsers(){
 
 	var datos={}	
@@ -93,7 +93,7 @@ $.ajax({
 		{
 			console.log('Inmueble agregado - OK')
 			alert('El Inmueble fue agregado Satisfactoriamente')
-			location.href='../VISTAS/propietarios.html'
+			location.href='../VISTAS/Inmuebles.html'
 		}
 		else
 		{
@@ -104,25 +104,26 @@ $.ajax({
 })
 }
 
-// FUNCION PARA ACTUALIZAR UN INMUEBLE -->
+// FUNCION PARA ACTUALIZAR UN INMUEBLE 
 function Actualizar(){
 	var datos={
         "id_inmueble":document.getElementById("id_inmueble").value,
         "direccion":document.getElementById("direccion").value,
-	"numero_identificacion":document.getElementById("numero_identificacion").value,
+		"numero_identificacion":document.getElementById("numero_identificacion").value,
         "id_tarifa":document.getElementById("id_tarifa").value
 	}
-$.ajax({
-	type:"post",
-	url:"http://localhost:3000/update",
-	data:datos,
-	dataType:"json",
-	success:function(data){
+	console.log(datos)
+	$.ajax({
+		type:"post",
+		url:"http://localhost:3000/update",
+		data:datos,
+		dataType:"json",
+		success:function(data){
 		if(data.save == 1)
 		{
 			console.log('Inmueble Actualizado Satisfactoriamente')
 			alert('Inmueble Actualizado Satisfactoriamente')
-			location.href='../VISTAS/menu.html'//pagina donde será redireccionado tras actualizar o la función que tenga programado
+			location.href='../VISTAS/menu.html'
 		}
 		else
 		{
@@ -133,13 +134,15 @@ $.ajax({
 })
 }
 
-// FUNCION PARA ELIMINAR UN INMUEBLE -->
+// FUNCION PARA ELIMINAR UN INMUEBLE 
 
 function Eliminar(){
 
 	var datos={
 		"id_inmueble":document.getElementById("id_inmueble").value,		
 	}
+
+	console.log(datos)
 $.ajax({
 	type:"post",
 	url:"http://localhost:3003/delete_inmuebles",
