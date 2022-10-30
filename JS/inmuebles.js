@@ -74,7 +74,7 @@ $.ajax({
 }
 
 // FUNCION PARA REGISTRAR UN INMUEBLE
-function insertar()
+function Agregar_Inmueble()
 {
 	var datos={
         "id_inmueble":document.getElementById("id_inmueble").value,
@@ -85,7 +85,7 @@ function insertar()
 console.log(datos)
 $.ajax({
 	type:"post",
-	url:"http://localhost:3000/insertar_User",
+	url:"http://localhost:3000/Agregar_Inmueble",
 	data:datos,
 	dataType:"json",
 	success:function(data){
